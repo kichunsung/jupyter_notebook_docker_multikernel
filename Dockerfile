@@ -25,9 +25,12 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 ENV HOME=/root
 ENV WORKSPACE=$HOME/app
-ENV PYTHONPATH=$WORKSPACE
+ENV PROJECT_NAME=workspace
+ENV PYTHONPATH=$WORKSPACE/$PROJECT_NAME
+
 ADD . $WORKSPACE/
 WORKDIR $WORKSPACE
+
 #set jupyter
 RUN /bin/bash -c "pip install jupyter"
 RUN /bin/bash -c "jupyter notebook --generate-config"
@@ -47,5 +50,8 @@ ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
 #RUN pyenv install 2.7.16
 RUN /bin/bash -c "sh bin/install_pyenv.sh"
 
+WORKDIR $WORKSPACE/$PROJECT_NAME
+ADD /Users/buzzni/search-brand_extractor/. .
+WORKDIR $WORKSPACE
 CMD ["jupyter","notebook","--allow-root"]
 EXPOSE 8888
