@@ -1,0 +1,55 @@
+elasticsearch==6.4.0
+fire==0.2.1
+flasgger==0.9.3
+flask-cors==3.0.8
+gevent==1.4.0
+google-pasta==0.1.8
+gunicorn==20.0.0
+joblib==0.8.4
+keras==2.1.6
+marisa-trie==0.7.5
+opt-einsum==3.1.0
+pendulum==2.0.5
+pip-chill==0.1.8
+psycopg2==2.7.5
+pylibmc==1.6.1
+pymongo==3.9.0
+requests==2.22.0
+sqlsoup==0.9.1
+tensorflow==1.13.2
+wrapt==1.11.2
+torch==1.3.1
+psycopg2-binary
+# absl-py==0.8.1 # Installed as dependency for tensorflow, tensorboard, tensorflow-estimator
+# astor==0.8.0 # Installed as dependency for tensorflow
+# certifi==2019.9.11 # Installed as dependency for requests
+# chardet==3.0.4 # Installed as dependency for requests
+# click==7.0 # Installed as dependency for pip-chill, flask
+# flask==1.1.1 # Installed as dependency for flask-cors, flasgger
+# gast==0.2.2 # Installed as dependency for tensorflow
+# greenlet==0.4.15 # Installed as dependency for gevent
+# grpcio==1.25.0 # Installed as dependency for tensorflow, tensorboard
+# h5py==2.10.0 # Installed as dependency for keras-applications, keras
+# idna==2.8 # Installed as dependency for requests
+# itsdangerous==1.1.0 # Installed as dependency for flask
+# jinja2==2.10.3 # Installed as dependency for flask
+# jsonschema==2.6.0 # Installed as dependency for flasgger
+# keras-applications==1.0.8 # Installed as dependency for tensorflow
+# keras-preprocessing==1.1.0 # Installed as dependency for tensorflow
+# markdown==3.1.1 # Installed as dependency for tensorboard
+# markupsafe==1.1.1 # Installed as dependency for jinja2
+# mistune==0.8.4 # Installed as dependency for flasgger
+# mock==3.0.5 # Installed as dependency for tensorflow-estimator
+# numpy==1.17.4 # Installed as dependency for tensorboard, tensorflow-estimator, torch, keras, keras-applications, scipy, h5py, keras-preprocessing, opt-einsum, tensorflow
+# protobuf==3.11.0 # Installed as dependency for tensorflow, tensorboard
+# python-dateutil==2.8.1 # Installed as dependency for pendulum
+# pytzdata==2019.3 # Installed as dependency for pendulum
+# pyyaml==5.1.2 # Installed as dependency for keras, flasgger
+# scipy==1.3.3 # Installed as dependency for keras
+# six==1.13.0 # Installed as dependency for absl-py, tensorboard, flasgger, tensorflow-estimator, keras, protobuf, h5py, grpcio, google-pasta, flask-cors, keras-preprocessing, tensorflow, python-dateutil, fire, mock
+# sqlalchemy==1.3.11 # Installed as dependency for sqlsoup
+# tensorboard==1.13.1 # Installed as dependency for tensorflow
+# tensorflow-estimator==1.13.0 # Installed as dependency for tensorflow
+# termcolor==1.1.0 # Installed as dependency for tensorflow, fire
+# urllib3==1.25.7 # Installed as dependency for elasticsearch, requests
+# werkzeug==0.16.0 # Installed as dependency for tensorboard, flask
