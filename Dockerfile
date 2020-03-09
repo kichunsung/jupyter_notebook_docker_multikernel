@@ -47,11 +47,20 @@ RUN apt-get install -y make build-essential \
     git python-pip
 ENV PYENV_ROOT $HOME/.pyenv
 ENV PATH $PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH
-#RUN pyenv install 2.7.16
-RUN /bin/bash -c "sh bin/install_pyenv.sh"
+RUN /bin/bash -c "sh /root/app/bin/install_pyenv.sh"
 
-WORKDIR $WORKSPACE/$PROJECT_NAME
-ADD /Users/buzzni/search-brand_extractor/. .
+#set python2  kernel
+RUN /root/.pyenv/shims/pip2 install ipykernel
+RUN /bin/bash -c "python /root/app/bin/gen_kernel.py -p 2.7 -vn python2 -vp /root/.pyenv/shims/python2"
+#RUN apt-get install -y git
+#set brand
+#WORKDIR $WORKSPACE/$PROJECT_NAME
+#ADD ./search-brand_extractor/. $WORKSPACE/$PROJECT_NAME/
+#RUN git clone git@bitbucket.org:ayaan_buzzni/brand_extractor_api.git
+WORKDIR $WORKSPACE/bin
+RUN /bin/bash -c "sh env.sh /root/app/env_list/brand_extractor"
+
+
 WORKDIR $WORKSPACE
 CMD ["jupyter","notebook","--allow-root"]
 EXPOSE 8888
