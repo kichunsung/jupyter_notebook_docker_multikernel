@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ayaan-jupyter
+  labels:
+    deployment.name: ayaan-jupyter
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      deployment.pod.name: ayaan-jupyter
+  template:
+    metadata:
+      labels:
+        deployment.pod.name: ayaan-jupyter
+    spec:
+      containers:
+        - name: ayaan-jupyter
+          image: ecr.buzzni.com/search/ayaan-jupyter:1.0.0
+          ports:
+            - containerPort: 8888
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ayaan-jupyter-nodeport
+  labels:
+    service.name: ayaan-jupyter-nodeport
+spec:
+  selector:
+    deployment.pod.name: ayaan-jupyter
+  ports:
+    - protocol: TCP
+      port: 8888
+      targetPort: 8888
+  type: NodePort
